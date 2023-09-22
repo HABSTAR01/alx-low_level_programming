@@ -8,20 +8,19 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int count = 0, count2 = 0;
+	int length, j;
+/* j is a counter for  n bytes of src to be concatenated */
+/* length = length of destination string */
 
-	while (*(dest + count) != '\0')
+	length = 0;
+	while (dest[length] != '\0')
 	{
-		count++;
+		length++;
 	}
-
-	while (count2 < n)
+	for (j = 0; j < n && src[j] != '\0'; j++, length++)
 	{
-		*(dest + count) = *(src + count2);
-		if (*(src + count2) == '\0')
-			break;
-		count++;
-		count2++;
+		dest[length] = src[j];
 	}
+	dest[length] = '\0';
 	return (dest);
 }
