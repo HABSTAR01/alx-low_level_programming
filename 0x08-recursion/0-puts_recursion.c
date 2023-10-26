@@ -13,4 +13,5 @@ void _puts_recursion(char *s)
 	}
 
 	_putchar(*s); /* Print the current character */
-	_puts_recursion(s + 1); /* Recursively call the function with the 
+	_puts_recursion(s + 1); /* Recursively call the function withnext character */
+}
